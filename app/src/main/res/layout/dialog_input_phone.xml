@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:background="@color/purple_500">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/logo_iaipromo"
+            android:layout_gravity="center"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:id="@+id/dialogBotTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="header text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogBotMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="texte wish will display in the body of the dialog bot"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <!-- Nouveau champ EditText pour saisir un numéro de téléphone -->
+    <EditText
+        android:id="@+id/phoneNumberField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="placeholder"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:background="@drawable/border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/yesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:layout_margin="8dp"
+            android:layout_marginTop="16dp" />
+        <Button
+            android:id="@+id/noButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_margin="8dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+</LinearLayout>

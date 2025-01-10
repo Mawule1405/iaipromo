@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">IAI Promo</string>
+    <string name="welcome_words">Bienvenue dans Notre Communauté</string>
+    <string name="accueil_words">"Créée en 1971, notre communauté continue de s'étendre, unie par des valeurs et des objectifs communs. Entre les niveaux SOMMET et BLEU, la hiérarchie reste toujours visible et bien définie.\nEnsemble, nous construisons un avenir meilleur, et c'est avec fierté que nous donnons à nos jeunes frères et sœurs la possibilité de savoir vers qui se tourner en cas de besoin."</string>
+    <string name="accueil_btn_words">Continuer ...</string>
+    <string name="title_activity_connect">connectActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Page de connexion -->
+    <string name="activity_name">Connexion</string>
+    <string name="identifiant">Email ou numéro</string>
+    <string name="password">Password</string>
+    <string name="connect_btn">Se connecter</string>
+    <string name="creer_compte_btn">Créer un compte</string>
+    <string name="voir_password">Aperçu du mot de passe</string>
+    <string name="password_oublie">Mot de passe oublié!</string>
+</resources>
