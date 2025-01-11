@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="texte wish will display in the body of the dialog bot"
         android:padding="8dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="16sp" />
 
@@ -50,7 +50,7 @@
         android:hint="placeholder"
         android:inputType="phone"
         android:padding="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_margin="12dp"
         android:minHeight="48dp"
         android:background="@drawable/border" />
 
@@ -60,7 +60,7 @@
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/yesButton"
+            android:id="@+id/validButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valider"
@@ -69,7 +69,7 @@
             android:layout_margin="8dp"
             android:layout_marginTop="16dp" />
         <Button
-            android:id="@+id/noButton"
+            android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"

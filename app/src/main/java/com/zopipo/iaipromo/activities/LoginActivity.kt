@@ -1,8 +1,10 @@
 package com.zopipo.iaipromo.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -12,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zopipo.iaipromo.R
+import com.zopipo.iaipromo.shared.Toasts
+import com.zopipo.iaipromo.shared.dialogbots.DialogInputPhone
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +61,50 @@ class LoginActivity : AppCompatActivity() {
         passwordForgetBtn.setOnClickListener{
 
             Intent(this, ChangePasswordActivity::class.java).also{
+                val dialog = DialogInputPhone(
+                    context = this,
+                    title = "Réinitialisation du mot de passe",
+                    message = "Veuillez entrer un numéro WhatsApp de récupération",
+                    positiveButtonAction = { number: String ->
+                        // Vérification du format du numéro (facultatif)
+                        if (number.isNotEmpty() && number.length >= 8) {
+                            // Générer un code à six chiffres
+                            val verificationCode = (100000..999999).random()
 
-                startActivity(it)
+                            // Créer le message pour WhatsApp
+                            val message = "Votre code de réinitialisation est : $verificationCode"
+
+                            // Ouvrir WhatsApp pour envoyer le message
+                            val intent = Intent(Intent.ACTION_VIEW).apply {
+                                data = Uri.parse("https://wa.me/$number?text=${Uri.encode(message)}")
+                                Log.d("WhatsAppURI", "URI générée : $data")
+                            }
+                            try {
+                                startActivity(intent)
+                            } catch (e: Exception) {
+                                val toast = Toasts(this, "Whatsapp n'est pas installé")
+                                toast.errorToast()
+                            }
+
+                            // Envoyer le numéro et le code vers l'activité suivante
+                            val nextActivityIntent = Intent(this, ChangePasswordActivity::class.java).apply {
+                                putExtra("PHONE_NUMBER", number)
+                                putExtra("VERIFICATION_CODE", verificationCode)
+                            }
+                            startActivity(nextActivityIntent)
+                        } else {
+                            val toast = Toasts(this, "Numéro incorrecte")
+                            toast.errorToast()
+                        }
+                    },
+                    negativeButtonAction = {
+                        val toast = Toasts(this, "Réinitialisation du mot de passe est annulé")
+                        toast.errorToast()
+                    }
+                )
+                dialog.showDialog()
+
+
             }
         }
     }

@@ -6,4 +6,7 @@
     <color name="purple_700">#FF00be22</color>
     <color name="teal_200">#FFef9b11</color>
     <color name="teal_700">#FFef9b12</color>
+
+    <color name="green">#FF00be63</color>
+    <color name="orange">#FFef9b11</color>
 </resources>
