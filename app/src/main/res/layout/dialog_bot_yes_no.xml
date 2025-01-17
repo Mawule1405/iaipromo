@@ -28,7 +28,7 @@
            android:layout_height="wrap_content"
            android:text="Yes or No"
            android:textColor="@color/white"
-           android:textSize="20sp"
+           android:textSize="16sp"
            android:textStyle="bold"
            android:padding="8dp"
            android:layout_gravity="center"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Voici les détails de l'élément sélectionné."
         android:padding="8dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="16sp" />
 

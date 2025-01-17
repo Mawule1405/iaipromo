@@ -5,14 +5,25 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import android.widget.ImageView
 import android.content.Context
+import com.bumptech.glide.request.RequestOptions
 
 class ImageLoader(private val context: Context) {
 
-    fun loadCircularImage(imageView: ImageView, imageResourceId: Int) {
+    fun loadCircularImage(imageView: ImageView, image: Int, placeholder: Int) {
         Glide.with(context)
-            .load(imageResourceId)  // Charge l'image depuis les ressources
-            .transform(CircleCrop()) // Applique la transformation circulaire
+            .load(image)  // Charge l'image depuis les ressources
+            .placeholder(placeholder)
+            .apply(RequestOptions.circleCropTransform()) // Applique la transformation circulaire
             .into(imageView)         // Applique l'image transformée à l'ImageView
+    }
+
+
+    fun loadCircularImage(imageView: ImageView, image: String, placeholder : Int) {
+        Glide.with(context)
+            .load(image)  // Charge l'image depuis les ressources
+            .placeholder(placeholder)
+            .apply(RequestOptions.circleCropTransform()) // Applique la transformation circulaire
+            .into(imageView)        // Applique l'image transformée à l'ImageView
     }
 
     fun loadImageFromUrl(imageView: ImageView, imageUrl: String) {

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_500"
     tools:context=".activities.LoginActivity">
 
     <ImageView
@@ -17,35 +18,47 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/image_couverture" />
 
+    <TextView
+        android:id="@+id/loginTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="~Connexion~"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/identifiantEt"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/identifiantEt"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="12dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:ems="10"
         android:background="@drawable/border"
         android:inputType="text"
-        android:textSize="12dp"
+        android:textSize="14dp"
         android:drawableStart="@drawable/ic_user_24"
         android:hint="@string/identifiant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/loginTv" />
 
     <EditText
         android:id="@+id/passwordEt"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="12dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:ems="10"
         android:hint="@string/password"
         android:drawableStart="@drawable/ic_lock_outline_24"
         android:background="@drawable/border"
         android:inputType="textPassword"
-        android:textSize="12dp"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/identifiantEt" />
@@ -54,9 +67,9 @@
         android:id="@+id/apercuPasswordCb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="20dp"
         android:text="@string/voir_password"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/white"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +79,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +93,7 @@
             android:layout_weight="1"
             android:layout_marginEnd="2dp"
             android:textSize="12dp"
+            android:backgroundTint="@color/teal_200"
             android:text="@string/connect_btn" />
 
         <Button
@@ -89,6 +103,7 @@
             android:layout_weight="1"
             android:textSize="12dp"
             android:layout_marginStart="2dp"
+            android:backgroundTint="@color/teal_200"
             android:text="@string/creer_compte_btn" />
     </LinearLayout>
 
@@ -99,8 +114,8 @@
         android:layout_marginHorizontal="12dp"
         android:background="@android:color/transparent"
         android:text="@string/password_oublie"
-        android:textColor="@color/teal_200"
-        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"

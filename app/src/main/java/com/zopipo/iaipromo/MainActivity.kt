@@ -10,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.zopipo.iaipromo.activities.ConnectActivity
 import com.zopipo.iaipromo.activities.LoginActivity
 import com.zopipo.iaipromo.models.checked.UserVerification
+import com.zopipo.iaipromo.shared.dialogbots.DialogBotOk
+import com.zopipo.iaipromo.shared.gadgets.NetworkUtils
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +28,25 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener{
             val checked = UserVerification().checkedOnCached()
+            val network = NetworkUtils(this).isDeviceConnected()
 
-            if(false){
-                Intent(this, ConnectActivity::class.java).also {
-                    startActivity(it)
+            if(!network){
+                if(!checked){
+                    Intent(this, ConnectActivity::class.java).also {
+                        startActivity(it)
+                    }
+                }else{
+                    Intent(this, LoginActivity::class.java).also {
+                        startActivity(it)
+                    }
                 }
             }else{
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                }
+                val dialog = DialogBotOk(context = this,
+                    title = "Connexion internet",
+                    message = "Vous êtes hors connexion. Veuillez vous connecter pour continuer.")
+                dialog.showDialog()
             }
+
         }
     }
 }

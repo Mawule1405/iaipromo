@@ -14,7 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zopipo.iaipromo.R
+import com.zopipo.iaipromo.services.LoginService
 import com.zopipo.iaipromo.shared.Toasts
+import com.zopipo.iaipromo.shared.dialogbots.DialogBotOk
 import com.zopipo.iaipromo.shared.dialogbots.DialogInputPhone
 
 class LoginActivity : AppCompatActivity() {
@@ -27,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val loginService =  LoginService()
         
         val passwordEt = findViewById<EditText>(R.id.passwordEt)
         val identifiantEt = findViewById<EditText>(R.id.identifiantEt)
@@ -49,6 +53,22 @@ class LoginActivity : AppCompatActivity() {
         loginAccountBtn.setOnClickListener{
             val identifiant = identifiantEt.text.toString()
             val password = passwordEt.text.toString()
+
+
+
+            val member = loginService.getMember(identifiant, password)
+            if(member !==null){
+
+                val intent = Intent(this, ConnectActivity::class.java)
+                intent.putExtra("memberId", member.id)
+                this.startActivity(intent)
+
+            }else{
+                val dialog = DialogBotOk(context = this, title="Connexion",
+                    message="Identifiant ou Mot de passe incorrect. Veuillez vérifier!")
+                dialog.showDialog()
+            }
+
 
         }
 

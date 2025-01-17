@@ -22,6 +22,7 @@ class ConnectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityConnectBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -39,11 +40,15 @@ class ConnectActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_promotion, R.id.nav_favoris, R.id.nav_compte
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -56,4 +61,7 @@ class ConnectActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_connect)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
+
 }

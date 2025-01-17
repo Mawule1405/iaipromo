@@ -4,6 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center"
+    android:background="@color/bgpromo"
+    android:layout_margin="4dp"
     android:padding="2dp">
 
     <ImageView
@@ -43,16 +45,6 @@
             android:layout_marginTop="1dp"
             />
 
-        <TextView
-            android:id="@+id/PromotionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Promotion"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:layout_marginTop="1dp"
-            />
 
         <TextView
             android:id="@+id/telephoneTextView"
@@ -64,11 +56,23 @@
             android:textSize="12sp"
             />
 
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="email@gmail.com"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal"
             >
 
@@ -76,6 +80,7 @@
                 android:id="@+id/detailImageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_weight="1"
                 android:clickable="true"
                 android:src="@drawable/detail_24"
                 android:layout_marginRight="16dp"
@@ -86,7 +91,8 @@
                 android:id="@+id/signalerImageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/signaler_24"
+                android:layout_weight="1"
+                android:src="@drawable/signal_24"
                 android:layout_marginRight="16dp"
                 />
 
@@ -94,8 +100,9 @@
                 android:id="@+id/favoriteImageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/favorite_no_24"
+                android:src="@drawable/favoris_plus"
                 android:clickable="true"
+                android:layout_weight="1"
                 android:layout_marginRight="16dp"
                 />
 
@@ -103,6 +110,7 @@
                 android:id="@+id/mailImageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_weight="1"
                 android:src="@drawable/mail_24"
                 android:clickable="true"
                 android:layout_marginRight="16dp"
@@ -112,9 +120,10 @@
                 android:id="@+id/whatsappImageView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_weight="1"
                 android:clickable="true"
-                android:src="@drawable/whatsapp_24"
-                android:layout_marginRight="16dp"
+                android:src="@drawable/message_24"
+                android:layout_marginRight="8dp"
                 />
 
         </LinearLayout>
